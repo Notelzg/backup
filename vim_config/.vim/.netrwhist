@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/logan/programeFIles/blog/hexo/source/_posts'
+let g:netrw_dirhist_2='/home/logan'
+let g:netrw_dirhist_3='/usr/share/X11/xkb'
+let g:netrw_dirhist_4='/home/logan/programeFIles/blog/hexo/.deploy_git'
+let g:netrw_dirhist_5='/home/logan/programeFIles/blog/hexo/public/2016/08/04/hello-world'
+let g:netrw_dirhist_6='/home/logan/programeFIles/blog/hexo/public/2016/08/04/index'
