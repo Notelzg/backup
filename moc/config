@@ -1,0 +1,35 @@
+ReadTags                = no
+Sort                    = FileName
+ShowStreamErrors        = no
+Mp3IgnoreCRCErrors      = yes
+Repeat                  = no
+Shuffle                 = no
+AutoNext                = yes
+FormatString            = "%(n:%n :)%(a:%a - :)%(t:%t:)%(A: \(%A\):)"
+OutputBuffer            = 2048
+InputBuffer             = 512
+Prebuffering            = 64
+JackOutLeft             = "alsa_pcm:playback_1"
+JackOutRight            = "alsa_pcm:playback_2"
+OSSDevice               = /dev/dsp
+OSSMixerDevice         = /dev/mixer
+OSSMixerChannel1         = pcm
+OSSMixerChannel2        = master
+AlsaMixer1               = PCM
+AlsaMixer2              = Master
+AlsaDevice              = default
+ShowHiddenFiles         = no
+HideFileExtension       = no
+ShowFormat              = yes
+ShowTime                = IfAvailable
+  Theme                 = transparent-background
+  UseMmap                 = no
+  SavePlaylist            = yes
+  SyncPlaylist            = yes
+  ASCIILines              = no
+  TagsCacheSize           = 256
+  FollowPlayedFile        = yes
+  CanStartInPlaylist      = yes
+  PlaylistFullPaths      = no
+
+  
