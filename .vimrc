@@ -48,6 +48,7 @@ filetype off                  " 必须
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
 Plugin 'git@github.com:Valloric/YouCompleteMe.git'
 Plugin 'tomasr/molokai'
 Plugin 'rdnetto/YCM-Generator'
@@ -172,5 +173,13 @@ nmap <C-\>c :scs find c <C-R>=expand("<cword>")<CR><CR>
 nmap <C-\>t :scs find t <C-R>=expand("<cword>")<CR><CR>	
 nmap <C-\>e :scs find e <C-R>=expand("<cword>")<CR><CR>	
 nmap <C-\>f :scs find f <C-R>=expand("<cfile>")<CR><CR>	
-nmap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
+nmap<C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>	
 nmap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>	
+""""""""""""""""""""""""""""""
+" nerdtrr plugin
+""""""""""""""""""""""""""""""
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+let NERDTreeWinPos=1
