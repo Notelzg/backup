@@ -1,0 +1,159 @@
+" 起始命令
+let mapleader=','
+"缩进2
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab
+" ==================================================
+"                        系统设置" ==================================================
+ set hlsearch
+" 设置高亮搜索
+set incsearch
+"设置搜索时高亮显示
+set ignorecase
+" 忽略大小写
+set smartcase
+"只能大小写
+set showmode
+set relativenumberset 
+scrolloff=3
+set history=100000
+set clipboard=unnamed
+" 使用ctrl+c 进行复制
+if has("clipboard")
+    vnoremap <C-C> "+y
+endif
+" 清除所有的高亮搜索
+nnoremap <Leader>sc :nohlsearch<CR>
+" 这个命令不知道为啥没用
+nnoremap <Leader>dm :delmarks<CR>
+" 退出当前文件
+nnoremap <Leader>q :q!<CR>
+" 退出所有文件
+nnoremap <Leader>Q :qa!<CR>
+"快速移动半页
+nnoremap <Leader>d <C-d>nnoremap <Leader>u <C-u>
+"==================================================
+"查询所有的action命令，可以使用命令： `:actionlist`
+"==================================================
+"将当前行给注释掉
+"nnoremap <Leader>;; :action CommentByLineComment<CR>
+"指定
+InspectCodennoremap <Leader>ic :action InspectCode<CR>nnoremap <Leader>oi :action OptimizeImports<CR>
+nnoremap <Leader>pm :action ShowPopupMenu<CR>
+"选择调试配置
+nnoremap <Leader>cd :action ChooseDebugConfiguration<CR>
+"选择运行配置
+nnoremap <Leader>rC :action ChooseRunConfiguration<CR>
+"重命令元素
+nnoremap <Leader>re :action RenameElement<CR>
+"重命名文件
+nnoremap <Leader>rf :action RenameFile<CR>
+"重运行
+nnoremap <Leader>rr :action Rerun<CR>
+nnoremap <Leader>si :action StepInto<CR>
+"Replace
+nnoremap <Leader>rp :action Replace<CR>
+"ReplaceInPath
+nnoremap <Leader>rpip :action ReplaceInPath<CR>
+"生成getter、setter等操作的generate
+nnoremap <Leader>ag :action Generate<CR>
+"generate Constructor
+nnoremap <Leader>agc :action GenerateConstructor<CR>
+"generate G&S
+nnoremap <Leader>gengs :action GenerateGetterAndSetter<CR>
+"==================================================
+"      所有的跳转操作
+"==================================================
+"改变视图模式
+nnoremap <Leader>cv :action ChangeView<CR>
+"打开maven视图
+nnoremap <Leader>mv :action ActivateMavenProjectsToolWindow<CR>
+"打开Terminal工具视图
+nnoremap <Leader>tl Vy<CR>:action ActivateTerminalToolWindow<CR>vnoremap <Leader>tl y<CR>:action ActivateTerminalToolWindow<CR>
+"
+"==================================================
+"      所有的跳转操作
+"==================================================
+"跳到上一个改变的位置
+nnoremap <Leader>jlc :action JumpToLastChange<CR>
+"跳到上一个视图
+nnoremap <Leader>jlw :action JumpToLastWindow<CR>
+"跳到下一个改变的位置
+nnoremap <Leader>jnc :action JumpToNextChange<CR>
+"Forward
+nnoremap <Leader>fw :action Forward<CR>
+"Back
+nnoremap <Leader>ba :action Back<CR>
+"MethodUp
+nnoremap <Leader>mu :action MethodUp<CR>
+"MethodDown
+nnoremap <Leader>md :action MethodDown<CR>
+"回退
+nnoremap U <C-r>
+"快速复制当前光标所在字符到行末
+nnoremap <Leader>Y y$
+"==================================================
+"      所有的调试操作
+"==================================================
+"查看所有的断点
+nnoremap <Leader>vbp :action ViewBreakpoints<CR>
+"查看当前断点执行的位置
+nnoremap <Leader>sep :action ShowExecutionPoint<CR>
+"
+"执行断点处程序的计算
+nnoremap <Leader>ee :action EvaluateExpression<CR>
+"断点运行到光标所在位置
+nnoremap <Leader>rc :action RunToCursor<CR>
+"添加断点
+nnoremap <Leader>bb :action ToggleLineBreakpoint<CR>
+"==================================================
+"      所有的关闭操作
+"==================================================
+"关闭当前内容
+nnoremap <Leader>cc :action CloseContent<CR>
+"关闭活动Tab
+nnoremap <Leader>tc :action CloseActiveTab<CR>
+"quit ==> close current window
+nnoremap <Leader>q :wq<CR>
+"==================================================
+"      所有的搜索操作
+"==================================================
+"打开Find In path
+nnoremap <Leader>fip :action FindInPath<CR>
+"文件内搜索
+nnoremap <Leader>/ :action Find<CR>
+"打开Action/Option搜索框
+nnoremap <Leader>ga :action GotoAction<CR>
+"打开文件所在文件夹
+nnoremap <Leader>fp :action ShowFilePath<CR>
+"查找所有
+nnoremap <Leader>se :action SearchEverywhere<CR>
+"查找文件
+nnoremap <Leader>gf :action GotoFile<CR>
+"查找类
+nnoremap <Leader>gc :action GotoClass<CR>
+"
+"获取申明
+nnoremap <Leader>gd :action GotoDeclaration<CR>
+"查找使用类
+nnoremap <Leader>fu :action FindUsages<CR>
+"查找使用类
+nnoremap <Leader>gi :action GotoImplementation<CR>
+"查找所有
+nnoremap <Leader>se :action SearchEverywhere<CR>
+"打开Symbol
+nnoremap <Leader>gs :action GotoSymbol<CR>
+"显示使用类
+nnoremap <Leader>sus :action ShowUsages<CR>
+"创建测试
+nnoremap <Leader>gt :action GotoTest<CR>
+"ShowUmlDiagram
+nnoremap <Leader>sdg :action ShowUmlDiagram<CR>
+"ShowUmlDiagramPopup
+nnoremap <Leader>sdp :action ShowUmlDiagramPopup<CR>
+"ShowSettings
+nnoremap <Leader>ss :action ShowSettings<CR>
+"打开BookMarks
+nnoremap <Leader>sm :action ShowBookmarks<CR>
